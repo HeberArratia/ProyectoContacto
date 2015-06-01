@@ -1,0 +1,154 @@
+body{
+	background-color: #0E74AF;
+}
+header.principal{
+	background-color: #0C6395;
+	overflow: hidden;
+	margin-bottom: 10px;
+
+	
+}
+
+header.principal h1{	
+	color: white;
+	font-size: 2,2em;
+	font-family: Helvetica;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: 'Arimo', Helvetica;
+}
+
+
+#contactos{
+	width: 400px;
+	margin: 0 auto;
+	-webkit-box-shadow: 0px 3px 25px -9px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 3px 25px -9px rgba(0,0,0,0.75);
+	box-shadow: 0px 3px 25px -9px rgba(0,0,0,0.75);
+	padding-top: 5px;
+	padding-bottom: 30px;
+	background-color: #FAFAFA;
+	border-radius: 1%;
+}
+
+#contactos .anadir img{
+	width: 33px;
+}
+
+#contactos .anadir{
+	padding-left: 5px;
+	margin-top: 0;
+	padding-top: 0;
+   
+}
+#contactos{
+	overflow: hidden;
+}
+
+#contactos .anadir p{
+	padding-top: 3px;
+	font-family: Helvetica;
+	font-size: 20px;
+	padding-left: 5px;
+	color: #02609b;
+}
+
+.control{
+	width: 25px;
+}
+
+#contactos .anadir img,#contactos .anadir p{
+	padding-bottom: 5px;
+	float: left;
+}
+
+.separador { 
+  background-color: #dfe1e2; 
+  margin-bottom: 10px;
+  height: 2px;
+}
+
+
+.userboton{
+	font-size: 2em;
+	border-style: dashed;
+	border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    color: #0C6395;
+    margin-bottom: 5px;
+    font-family: OpenSans-Regular, Helvetica;
+}
+
+#nombre{
+
+	font-size: 18px;
+	line-height: 11px;
+}
+.datosecundarios{
+	font-size: 13px;
+	line-height: 9px;
+	color: #525252;
+}
+
+.userboton:hover{
+	cursor: pointer;
+	color: #031a5a;
+}
+
+form{
+	width: 300px;
+	margin: 0 auto;
+	
+}
+
+
+#submenu1, #submenu2,#submenu3,#submenu4{
+	display: none;
+
+}
+
+
+li i{
+	color: #0C6395;
+}
+
+ul, li{
+	list-style: none;
+	padding-left: 0;
+	color: #0E74AF;
+}
+
+li:hover{
+
+	color: #0C6395;
+}
+
+#mensaje{
+	margin-top: 10px;
+}
+
+.seleccione{
+	margin-bottom: 0;
+	color: gray;
+
+}
+
+footer{
+	margin-top: 10px;
+	text-align: center;
+	color: white;
+}
+
+.ancho200{
+	width: 200px;
+}
+label{
+padding-top: 3px;
+color: #848484;
+}
+#boton{
+	float: right;
+	margin-top: 9px;
+	margin-bottom: 0;
+}

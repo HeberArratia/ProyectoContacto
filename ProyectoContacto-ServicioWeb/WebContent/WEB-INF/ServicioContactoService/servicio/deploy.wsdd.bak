@@ -1,0 +1,56 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ServicioContactoService WSDL service -->
+
+  <service name="ServicioContacto" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://servicio"/>
+      <parameter name="wsdlServiceElement" value="ServicioContactoService"/>
+      <parameter name="schemaQualified" value="http://servicio,http://orm"/>
+      <parameter name="wsdlServicePort" value="ServicioContacto"/>
+      <parameter name="className" value="servicio.ServicioContactoSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ServicioContacto"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="modificarContacto" qname="operNS:modificarContacto" xmlns:operNS="http://servicio" returnQName="retNS:modificarContactoReturn" xmlns:retNS="http://servicio" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ape" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:mail" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:tele" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:dire" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:rut" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:idc" xmlns:pns="http://servicio" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="crearContacto" qname="operNS:crearContacto" xmlns:operNS="http://servicio" returnQName="retNS:crearContactoReturn" xmlns:retNS="http://servicio" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ape" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:mail" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:tele" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:dire" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:rut" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="eliminarContacto" qname="operNS:eliminarContacto" xmlns:operNS="http://servicio" returnQName="retNS:eliminarContactoReturn" xmlns:retNS="http://servicio" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:rutContacto" xmlns:pns="http://servicio" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="listaContactos" qname="operNS:listaContactos" xmlns:operNS="http://servicio" returnQName="retNS:listaContactosReturn" xmlns:retNS="http://servicio" returnType="rtns:Contacto" xmlns:rtns="http://orm" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="crearContacto listaContactos eliminarContacto modificarContacto"/>
+
+      <typeMapping
+        xmlns:ns="http://orm"
+        qname="ns:Contacto"
+        type="java:orm.Contacto"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

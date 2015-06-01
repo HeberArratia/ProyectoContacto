@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://servicio" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://servicio" xmlns:intf="http://servicio" xmlns:tns1="http://orm" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://servicio" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://orm"/>
+   <element name="modificarContacto">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+      <element name="ape" type="xsd:string"/>
+      <element name="mail" type="xsd:string"/>
+      <element name="tele" type="xsd:string"/>
+      <element name="dire" type="xsd:string"/>
+      <element name="rut" type="xsd:string"/>
+      <element name="idc" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modificarContactoResponse">
+    <complexType>
+     <sequence>
+      <element name="modificarContactoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="crearContacto">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+      <element name="ape" type="xsd:string"/>
+      <element name="mail" type="xsd:string"/>
+      <element name="tele" type="xsd:string"/>
+      <element name="dire" type="xsd:string"/>
+      <element name="rut" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="crearContactoResponse">
+    <complexType>
+     <sequence>
+      <element name="crearContactoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminarContacto">
+    <complexType>
+     <sequence>
+      <element name="rutContacto" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminarContactoResponse">
+    <complexType>
+     <sequence>
+      <element name="eliminarContactoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="listaContactos">
+    <complexType/>
+   </element>
+   <element name="listaContactosResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="listaContactosReturn" type="tns1:Contacto"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://orm" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Contacto">
+    <sequence>
+     <element name="ORMID" type="xsd:int"/>
+     <element name="apellido" nillable="true" type="xsd:string"/>
+     <element name="direccion" nillable="true" type="xsd:string"/>
+     <element name="mail" nillable="true" type="xsd:string"/>
+     <element name="nombre" nillable="true" type="xsd:string"/>
+     <element name="rut" nillable="true" type="xsd:string"/>
+     <element name="telefono" nillable="true" type="xsd:string"/>
+     <element name="uid" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="listaContactosResponse">
+
+      <wsdl:part element="impl:listaContactosResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modificarContactoResponse">
+
+      <wsdl:part element="impl:modificarContactoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="eliminarContactoResponse">
+
+      <wsdl:part element="impl:eliminarContactoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listaContactosRequest">
+
+      <wsdl:part element="impl:listaContactos" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modificarContactoRequest">
+
+      <wsdl:part element="impl:modificarContacto" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="crearContactoRequest">
+
+      <wsdl:part element="impl:crearContacto" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="crearContactoResponse">
+
+      <wsdl:part element="impl:crearContactoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="eliminarContactoRequest">
+
+      <wsdl:part element="impl:eliminarContacto" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ServicioContacto">
+
+      <wsdl:operation name="modificarContacto">
+
+         <wsdl:input message="impl:modificarContactoRequest" name="modificarContactoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:modificarContactoResponse" name="modificarContactoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="crearContacto">
+
+         <wsdl:input message="impl:crearContactoRequest" name="crearContactoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:crearContactoResponse" name="crearContactoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminarContacto">
+
+         <wsdl:input message="impl:eliminarContactoRequest" name="eliminarContactoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:eliminarContactoResponse" name="eliminarContactoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listaContactos">
+
+         <wsdl:input message="impl:listaContactosRequest" name="listaContactosRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:listaContactosResponse" name="listaContactosResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServicioContactoSoapBinding" type="impl:ServicioContacto">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="modificarContacto">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modificarContactoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modificarContactoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="crearContacto">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="crearContactoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="crearContactoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminarContacto">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="eliminarContactoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="eliminarContactoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listaContactos">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="listaContactosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="listaContactosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServicioContactoService">
+
+      <wsdl:port binding="impl:ServicioContactoSoapBinding" name="ServicioContacto">
+
+         <wsdlsoap:address location="http://localhost:8080/ProyectoContacto-ServicioWeb/services/ServicioContacto"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

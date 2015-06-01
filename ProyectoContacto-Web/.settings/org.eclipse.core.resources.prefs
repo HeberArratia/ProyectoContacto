@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/orm/Contacto.java=UTF-8
+encoding//src/servicio/ServicioContacto.java=UTF-8
+encoding//src/servicio/ServicioContactoService.java=UTF-8
+encoding//src/servicio/ServicioContactoServiceLocator.java=UTF-8
+encoding//src/servicio/ServicioContactoSoapBindingStub.java=UTF-8
